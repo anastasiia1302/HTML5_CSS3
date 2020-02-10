@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>querySelectorAll function</title>
+	<script type="text/javascript">
+		if (window.addEventLestener) window.addEventLestener("load", loadHandler, false);
+		function loadHandler() {
+			//возвращает массив элементов, которые соответсвуют селектору
+			//в данном случае возвращается массив параграфов находящихся в элементе с атрибутом class="testCalss"
+			var pArray = document.querySelectorAll(".testCalss p");
+			for (var i = 0; i < pArray.length; i++) {
+				pArray[i].style.border = "solid 1 px";
+				pArray[i].style.margin = "5px";
+				pArray[i].style.padding = "5px";
+			}
+		}
+	</script>
+
+	<style type="text/css">
+		.testCalss {
+			border: 3px solid green;
+		}
+	</style>
+</head>
+<body>
+	<div class="testCalss">
+		<p>
+			First
+		</p>
+		<p>
+			Second
+		</p>
+		<p>
+			Third
+		</p>
+	</div>
+	<div>
+		<p>
+			First
+		</p>
+		<p>
+			Second
+		</p>
+		<p>
+			Third
+		</p>
+	</div>
+</body>
+</html>
