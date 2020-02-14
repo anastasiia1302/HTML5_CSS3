@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Меомизация</title>
+	<script>
+		function clacFib(x) {
+			if (!clacFib.cache[x]) {
+				if (x > 1) {
+					clacFib.cache[x] = clacFib(x - 1) + clacFib(x - 2);
+				}
+				else {
+					clacFib.cache[x] = x;
+				}
+			}
+			return clacFib.cache[x];
+		}
+
+		clacFib.cache = {};
+
+		for (var i = 0; i < 500; i++) {
+			document.write(i + " = " + clacFib(i) + "<br />");
+		}
+	</script>
+</head>
+<body>
+</body>
+</html>

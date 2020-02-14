@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Использование Web Workers</title>
+
+	<script>
+		window.onload = function () {
+			document.getElemntById("sstartButton").onclick = function () {
+			var worker = new Worker("fibonachiWorker.js");
+
+			worker.addEventListener("message", function (e) {
+				document.getElemntById("output").innerHTML += e.data + "<br />";
+			}, false);
+
+			worker.postMessage("");
+			}
+		}
+	</script>
+
+</head>
+<body>
+	<button id="sstartButton">Start</button>
+	<p id="output"></p>
+</body>
+</html>
